@@ -9,6 +9,7 @@ import "./App.css"
 
 const App = () => {
   const [movies, setMovies] = useState([])
+  const [favorites, setFavorites] = useState([])
   const [searchValue, setSearchValue] = useState('')
 
   const getMovieRequest = async (searchValue) => {
@@ -25,6 +26,12 @@ const App = () => {
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
+
+  const addFavoriteMovie = (movie) => {
+    const newFavoritesList = [...favorites, movie];
+    setFavorites(newFavoritesList);
+  }
+
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
@@ -32,7 +39,11 @@ const App = () => {
        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="row">
-        <MovieList movies={movies} favoriteComponent={AddFavorite} />
+        <MovieList 
+          movies={movies} 
+          favoriteComponent={AddFavorite} 
+          handleFavoritesClick={addFavoriteMovie} 
+        />
       </div>
     </div>
   )
