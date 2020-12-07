@@ -1,12 +1,12 @@
 import React from 'react'
 
-const MovieList = props => {
+const MovieList = ({ movies }) => {
   return (
     <>
-      {props.movies.map((movie, index) => (
+      {movies.map((movie, index) => (
 
         <div>
-
+          <img src={movie.Poster} alt="movie" />
         </div>
       ))}
     </>
