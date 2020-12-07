@@ -3,6 +3,7 @@ import MovieList from './components/MovieList'
 import MovieListHeading from './components/MovieListHeading'
 import SearchBox from './components/SearchBox'
 import AddFavorite from './components/AddFavorite'
+import RemoveFavorite from './components/RemoveFavorite'
 // CSS imports
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
@@ -32,6 +33,8 @@ const App = () => {
     setFavorites(newFavoritesList);
   }
 
+  
+
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
@@ -51,7 +54,7 @@ const App = () => {
       <div className="row">
         <MovieList 
           movies={favorites} 
-          favoriteComponent={AddFavorite} 
+          favoriteComponent={RemoveFavorite} 
           handleFavoritesClick={addFavoriteMovie} 
         />
       </div>
