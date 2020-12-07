@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MovieList = ({ movies, favoriteComponent }) => {
+const MovieList = ({ movies, favoriteComponent, handleFavoritesClick }) => {
   const FavoriteComponent = favoriteComponent;
 
   return (
@@ -9,7 +9,7 @@ const MovieList = ({ movies, favoriteComponent }) => {
         movie.Poster === 'N/A' ? null :
         <div className="image-container d-flex justify-content-start m-3" key={movie.imdbID}>
           <img src={movie.Poster} alt="movie" />
-          <div className='overlay d-flex align-items-center justify-content-center'>
+          <div onClick={() => handleFavoritesClick(movie)} className='overlay d-flex align-items-center justify-content-center'>
             <FavoriteComponent />
           </div>
         </div>
