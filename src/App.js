@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MovieList from './components/MovieList'
+import MovieListHeading from './components/MovieListHeading'
+import SearchBox from './components/SearchBox'
 // CSS imports
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
@@ -24,7 +26,8 @@ const App = () => {
   return (
     <div className="container-fluid movie-app">
       <div className="row">
-       
+       <MovieListHeading heading="Movies" />
+       <SearchBox />
       </div>
       <div className="row">
         <MovieList movies={movies} />
