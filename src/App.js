@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MovieList from './components/MovieList'
 import MovieListHeading from './components/MovieListHeading'
 import SearchBox from './components/SearchBox'
+import AddFavorite from './components/AddFavorite'
 // CSS imports
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
@@ -31,7 +32,7 @@ const App = () => {
        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="row">
-        <MovieList movies={movies} />
+        <MovieList movies={movies} favoriteComponent={AddFavorite} />
       </div>
     </div>
   )
