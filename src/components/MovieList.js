@@ -3,8 +3,7 @@ import React from 'react'
 const MovieList = ({ movies }) => {
   return (
     <>
-      {movies.map((movie) => (
-
+      {movies?.map((movie) => (
         <div className="d-flex justify-content-start m-3" key={movie.imdbID}>
           <img src={movie.Poster} alt="movie" />
         </div>
