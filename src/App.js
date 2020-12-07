@@ -8,7 +8,7 @@ import "./App.css"
 
 const App = () => {
   const [movies, setMovies] = useState([])
-  const [searchValue, setSearchValue] = useState()
+  const [searchValue, setSearchValue] = useState('')
 
   const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=563a76db`;
@@ -19,7 +19,6 @@ const App = () => {
     if(responseJSON?.Search) {
       setMovies(responseJSON.Search);
     }
-    console.log(responseJSON.Search)
   };
 
   useEffect(() => {
