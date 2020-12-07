@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MovieList from './components/MovieList'
 // CSS imports
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -77,6 +77,19 @@ const App = () => {
         "Poster": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg"
     }
 ])
+
+  const getMovieRequest = async () => {
+    const url = "http://www.omdbapi.com/?s=star wars&apikey=563a76db"
+
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+
+    console.log(responseJSON);
+  }
+
+  useEffect(() => {
+    getMovieRequest();
+  }, [])
   return (
     <div className="container-fluid movie-app">
       <div className="row">
